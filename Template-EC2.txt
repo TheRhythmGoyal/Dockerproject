@@ -1,0 +1,12 @@
+#!/bin/bash
+
+sudo apt update -y
+sudo apt-get install docker.io -y
+
+mkdir Docker
+cd Docker
+git init
+
+sudo git pull https://github.com/TheRhythmGoyal/Dockerproject.git
+sudo docker build -t flaskapp .
+sudo docker run -d -p 5000:5000 flaskapp:latest
